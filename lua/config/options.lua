@@ -1,6 +1,6 @@
 local opt = vim.opt
 
--- tab indentation 
+-- tab indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
@@ -13,7 +13,7 @@ opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 
--- visual 
+-- visual
 opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true
@@ -31,3 +31,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format { async = false }
   end
 })
+
+
+-- obsidian
+opt.conceallevel = 1

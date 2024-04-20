@@ -47,3 +47,13 @@ mapKey('<leader>jl', '<cmd>lua require("jenkinsfile_linter").validate()<cr>')
 
 -- toggleterm
 mapKey('<leader>t', '<cmd>ToggleTerm direction=float<cr>')
+
+-- obsidian
+mapKey('<leader>on', '<cmd>ObsidianNew<cr>')
+mapKey('<leader>ot', '<cmd>ObsidianTemplate<cr>')
+
+-- nvim-ufo
+--
+-- za : toggle folding on and off
+-- zM : close all
+-- zR : open all
