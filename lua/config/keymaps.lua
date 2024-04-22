@@ -57,3 +57,12 @@ mapKey('<leader>ot', '<cmd>ObsidianTemplate<cr>')
 -- za : toggle folding on and off
 -- zM : close all
 -- zR : open all
+--
+--
+-- wrapping
+-- [ow (soft wrap mode)
+-- ]ow (hard wrap mode)
+-- yow (toggle wrap mode)
+-- HardWrapMode
+-- SoftWrapMode
+-- ToggleWrapMode
