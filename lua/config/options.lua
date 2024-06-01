@@ -34,4 +34,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 
 -- obsidian
-opt.conceallevel = 1
+
+opt.conceallevel = 0

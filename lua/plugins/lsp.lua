@@ -3,7 +3,7 @@ local keyMapper = require('utils.KeyMapper').mapKey
 return {
   {
     "williamboman/mason.nvim",
-    config = function() 
+    config = function()
       require('mason').setup()
     end,
     lazy = false
@@ -12,17 +12,17 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { "lua_ls", "tsserver", "gopls", "html" }
+        ensure_installed = { "lua_ls", "tsserver", "gopls", "html", "css" }
       })
     end
   },
   {
     'neovim/nvim-lspconfig',
     cmd = 'LspInfo',
-    event = {'BufReadPre', 'BufNewFile'},
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'williamboman/mason-lspconfig.nvim'},
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'williamboman/mason-lspconfig.nvim' },
     },
     config = function()
       -- This is where all the LSP shenanigans will live
@@ -32,13 +32,13 @@ return {
       lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
-        lsp_zero.default_keymaps({buffer = bufnr})
+        lsp_zero.default_keymaps({ buffer = bufnr })
       end)
 
       lsp_zero.format_on_save({
         format_opts = {
-          async = false, 
-          timeout_ms =  10000,
+          async = false,
+          timeout_ms = 10000,
         }
       })
       require('mason-lspconfig').setup({
@@ -52,6 +52,14 @@ return {
           end,
         }
       })
+
+      require('lspconfig').yamlls.setup {
+        settings = {
+          yaml = {
+            schemas = { ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml" }
+          }
+        }
+      }
     end
     -- config = function()
     --   local lspconfig = require('lspconfig')
