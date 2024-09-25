@@ -60,6 +60,30 @@ return {
           }
         }
       }
+      -- Set up lspconfig.
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+      require('lspconfig').lua_ls.setup {
+        capabilities = capabilities,
+      }
+      require('lspconfig').html.setup {
+        capabilities = capabilities,
+        cmd = { "typescript-language-server", "--stdio" },
+        filetypes = { "html", "js" },
+        init_options = {
+          {
+            configurationSection = { "html", "css", "javascript" },
+            embeddedLanguages = {
+              css = true,
+              javascript = true
+            },
+            provideFormatter = true
+          }
+        },
+        single_file_support = true,
+      }
+      require('lspconfig').tsserver.setup {}
     end
     -- config = function()
     --   local lspconfig = require('lspconfig')

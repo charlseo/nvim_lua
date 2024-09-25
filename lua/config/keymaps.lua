@@ -20,7 +20,6 @@ mapKey('<leader>nh', ':nohlsearch<cr>')
 mapKey('<', '<gv', 'v')
 mapKey('>', '>gv', 'v')
 
-
 -- split
 mapKey('<leader>v', '<cmd>vsplit<cr>')
 mapKey('<leader>h', '<cmd>split<cr>')
@@ -52,8 +51,10 @@ mapKey('<leader>t', '<cmd>ToggleTerm direction=float<cr>')
 mapKey('<leader>on', '<cmd>ObsidianNew<cr>')
 mapKey('<leader>ot', '<cmd>ObsidianTemplate<cr>')
 
+-- todo-comment
+mapKey('<leader>do', '<cmd>TodoTelescope<cr>')
+
 -- nvim-ufo
---
 -- za : toggle folding on and off
 -- zM : close all
 -- zR : open all
